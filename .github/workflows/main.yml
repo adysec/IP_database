@@ -61,7 +61,6 @@ jobs:
         
       - name: Commit and Push changes
         run: |
-          rm -rf lionsoul
           echo $(date +'%Y%m%d') > date.txt
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
