@@ -48,7 +48,14 @@ https://raw.githubusercontent.com/adysec/IP_database/main/ip2region/ip2region.xd
 国内下载直链
 https://raw.gitmirror.com/adysec/IP_database/main/ip2region/ip2region.xdb
 ```
-
+## 17monipdb
+17monipdb 数据库文件
+```
+下载直链
+https://raw.githubusercontent.com/adysec/IP_database/main/17monipdb/ip2region.dat
+国内下载直链
+https://raw.gitmirror.com/adysec/IP_database/main/17monipdb/ip2region.dat
+```
 ## Thanks
 `https://github.com/nmgliangwei/qqwry`删去了下载innoextract等工作流
 
