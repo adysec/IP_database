@@ -40,6 +40,7 @@ jobs:
         shell: pwsh
         run: |
           unzip *.zip setup.exe
+          chmod +x innoextract
           ./innoextract setup.exe -I qqwry.dat
           mv app/qqwry.dat qqwry/qqwry.dat
 
