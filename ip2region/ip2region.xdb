@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<title>Login - Gitee.com</title>
+<meta content='on' http-equiv='x-dns-prefetch-control'>
+<link href='//e.gitee.com' rel='dns-prefetch'>
+<link href='//files.gitee.com' rel='dns-prefetch'>
+<link href='//toscode.gitee.com' rel='dns-prefetch'>
+<link href='https://cn-assets.gitee.com' rel='dns-prefetch'>
+<link href='https://portrait.gitee.com' rel='dns-prefetch'>
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://cn-assets.gitee.com/assets/favicon-9007bd527d8a7851c8330e783151df58.ico" />
+
+<meta charset='utf-8'>
+<meta content='always' name='referrer'>
+<meta content='Gitee' property='og:site_name'>
+<meta content='Object' property='og:type'>
+<meta content='https://gitee.com/login?redirect_to_url=%2Flionsoul%2Fip2region%2Fraw%2Fmaster%2Fdata%2Fip2region.xdb' property='og:url'>
+<meta content='https://gitee.com/static/images/logo_themecolor.png' itemprop='image' property='og:image'>
+<meta content='Login - Gitee.com' itemprop='name' property='og:title'>
+<meta content='Gitee.com（码云） 是 OSCHINA.NET 推出的代码托管平台，支持 Git 和 SVN，提供免费的私有仓库托管。目前已有超过 1200万的开发者选择 Gitee。' property='og:description'>
+<meta content='码云,Gitee,代码托管,Git,Git@OSC,Gitee.com,开源,内源,项目管理,版本控制,开源代码,代码分享,项目协作,开源项目托管,免费代码托管,Git代码托管,Git托管服务' name='Keywords'>
+<meta content='Gitee.com（码云） 是 OSCHINA.NET 推出的代码托管平台，支持 Git 和 SVN，提供免费的私有仓库托管。目前已有超过 1200万的开发者选择 Gitee。' itemprop='description' name='Description'>
+<meta content='pc,mobile' name='applicable-device'>
+
+<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="5PgHyx1SriItv043FFbyVzBcUi8V2YsEqNC0+JVVwzwhOQ7nRIGm8DRSXl7ZM/8Z5fEoHNLbv/t1bKmKV80gXw==" />
+
+<link rel="stylesheet" media="all" href="https://cn-assets.gitee.com/assets/application-b429676c43f961d3dfb9a62b92d7e148.css" />
+<script>
+//<![CDATA[
+window.gon = {};gon.locale="zh-CN";gon.sentry_dsn=null;gon.baidu_register_hm_push=null;gon.sensor={"server_url":"https://haveaniceday.gitee.com:3443/sa?project=production","sdk_url":"https://cn-assets.gitee.com/assets/static/sensors-sdk-2f850fa5b654ad55ac0993fda2f37ba5.js","page_type":"其他"};gon.info={"controller_path":"sessions","action_name":"new","current_user":false};gon.tour_env={"current_user":null,"action_name":"new","original_url":"https://gitee.com/login?redirect_to_url=%2Flionsoul%2Fip2region%2Fraw%2Fmaster%2Fdata%2Fip2region.xdb","controller_path":"sessions"};gon.yunpian_key="5de60e59c04d4dab96bdbc312370ad26";gon.encrypt={"enabled":true,"separator":"$gitee$","password_key":"-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDIrn+WB2Yi4ABAL5Tq6E09tumY\nqVTFdpU01kCDUmClczJOCGZriLNMrshmN9NJxazpqizPthwS1OIK3HwRLEP9D3GL\n7gCnvN6lpIpoVwppWd65f/rK2ewv6dstN0fCmtVj4WsLUchWlgNuVTfWljiBK/Dc\nYkfslRZzCq5Fl3ooowIDAQAB\n-----END PUBLIC KEY-----\n"};gon.oversea_login=true;
+//]]>
+</script>
+<script src="https://cn-assets.gitee.com/assets/static/sensor-6269b9ad61bbcdaff20078e5dcff62d5.js"></script>
+<script src="https://cn-assets.gitee.com/assets/static/sentry-5.1.0-a823fb0be1b61c5d7ca4a89f0536cb0a.js"></script>
+<script src="https://cn-assets.gitee.com/assets/application-41226c6a36ee674dcabaa6eb9b9e2a26.js"></script>
+<script src="https://cn-assets.gitee.com/assets/lib/jquery.timeago.zh-CN-4a4818e98c1978d2419ab19fabcba740.js"></script>
+
+<script src="/static/javascripts/polyfill-7.4.3.min.js"></script>
+<script src="/static/javascripts/yunpian/riddler-sdk-0.2.2.js?t=1629687362163"></script>
+<script src="https://cn-assets.gitee.com/assets/encrypt-d49cb3adc96d2acf1f8d85390cecb54d.js"></script>
+<script src="https://cn-assets.gitee.com/assets/devise/application-664f00abab4888f879a990a8553a7c62.js"></script>
+
+<script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script>
+  var title = document.title.replace(/( - Gitee| - 码云)$/, '')
+      imgUrl = '';
+  
+  document.addEventListener('DOMContentLoaded', function(event) {
+    var imgUrlEl = document.querySelector('.readme-box .markdown-body > img, .readme-box .markdown-body :not(a) > img');
+    imgUrl = imgUrlEl && imgUrlEl.getAttribute('src');
+  
+    if (!imgUrl) {
+      imgUrlEl = document.querySelector('meta[itemprop=image]');
+      imgUrl = imgUrlEl && imgUrlEl.getAttribute('content');
+      imgUrl = imgUrl || "https://gitee.com/static/images/logo_themecolor.png";
+    }
+  
+    wx.config({
+      debug: false,
+      appId: "wxff219d611a159737",
+      timestamp: "1719995263",
+      nonceStr: "fbfae43a9814db11978144954625378f",
+      signature: "ccb63b7c11a0c76143fb7c6b1f8e5732d8285e87",
+      jsApiList: [
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage'
+      ]
+    });
+  
+    wx.ready(function () {
+      wx.onMenuShareTimeline({
+        title: title, // 分享标题
+        link: "https://gitee.com/login?redirect_to_url=%2Flionsoul%2Fip2region%2Fraw%2Fmaster%2Fdata%2Fip2region.xdb", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        imgUrl: imgUrl // 分享图标
+      });
+      wx.onMenuShareAppMessage({
+        title: title, // 分享标题
+        link: "https://gitee.com/login?redirect_to_url=%2Flionsoul%2Fip2region%2Fraw%2Fmaster%2Fdata%2Fip2region.xdb", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        desc: document.querySelector('meta[name=Description]').getAttribute('content'),
+        imgUrl: imgUrl // 分享图标
+      });
+    });
+    wx.error(function(res){
+      console.error('err', res)
+    });
+  })
+</script>
+
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [["$$","$$"],["\\[","\\]"]],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+    ignoreClass: "container|files",
+    processClass: "markdown-body"
+  }
+});
+</script>
+<script src="https://cn-assets.gitee.com/uploads/resources/MathJax-2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script>
+  (function () {
+    var messages = {
+      'zh-CN': {
+        addResult: '增加 <b>{term}</b>',
+        count: '已选择 {count}',
+        maxSelections: '最多 {maxCount} 个选择',
+        noResults: '未找到结果',
+        serverError: '连接服务器时发生错误'
+      },
+      'zh-TW': {
+        addResult: '增加 <b>{term}</b>',
+        count: '已選擇 {count}',
+        maxSelections: '最多 {maxCount} 個選擇',
+        noResults: '未找到結果',
+        serverError: '連接服務器時發生錯誤'
+      }
+    }
+  
+    if (messages[gon.locale]) {
+      $.fn.dropdown.settings.message = messages[gon.locale]
+    }
+  }());
+</script>
+
+<script>
+  var userAgent = navigator.userAgent;
+  var isLessIE11 = userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1;
+  if(isLessIE11){
+    var can_access = ""
+    if (can_access != "true"){
+      window.location.href = "/incompatible.html";
+    }
+  }
+  document.addEventListener("error", function (ev) {
+    var elem = ev.target;
+    if (elem.tagName.toLowerCase() === 'img') {
+      elem.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAAAAACIM/FCAAACh0lEQVR4Ae3ch5W0OgyG4dt/mQJ2xgQPzJoM1m3AbALrxzrf28FzsoP0HykJEEAAAUQTBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEkKK0789+GK/I2ezfQB522PnS1qc8pGgXvr4tE4aY0XOUWlGImThWgyCk6DleixzE7qwBkg/MGiDPlVVAyp1VQGrPKiACDhFI6VkF5LmzCki+sg7IwDoglnVAil0IMkeG9CyUiwsxLFUVFzJJOQaKCjFCDN9RXMjIX7W6ztZXZDKKCyn8sWJvH+nca7WHDN9lROlAliPH9iRKCPI4cswFJQWxB46toLQgQ9jhn5QYZA9DOkoMUoQde5YapAxDWkoNYsOQR3KQd9CxUnIQF4S49CB9ENKlBxmDEKsFUgMCCCCAAHIrSF61f6153Ajy8nyiPr8L5MXnmm4CyT2fzN4DUvHZ+ntA2tOQBRBAAAEEEEAAAQQQ7ZBaC6TwSiDUaYHQ2yuB0MN+ft+43whyrs4rgVCjBUKTFshLC6TUAjGA3AxSaYFYLZBOC2RUAsk8h5qTg9QcbEoOsoQhQ2qQhsO5xCD5dgB5JQaZ+KBKGtKecvR81Ic0ZDjByKdDx0rSEDZ/djQbH+bkIdvfJFm98BfV8hD2zprfVdlu9PxVeyYAkciREohRAplJCaRSAplJCcQogTjSAdlyHRBvSAekJR0QRzogA+mADJkOiCPSAPEtqYBshlRAXC43hxix2QiOuEZkVERykGyNo9idIZKE0HO7XrG6OiMShlDWjstVzdPgXtUH9v0CEidAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQP4HgjZxTpdEii0AAAAASUVORK5CYII=";
+    }
+  }, true);
+</script>
+</head>
+
+<body class='home session-body ui_basic'>
+<div class='site-content'>
+<div class='fixed-notice-infos'>
+<div class='all-messages'>
+</div>
+<div class='ui container'>
+<div class='flash-messages' id='messages-container'></div>
+</div>
+<script>
+  (function() {
+    $(function() {
+      var $error_box, alertTip, notify_content, notify_options, template;
+      template = '<div data-notify="container" class="ui {0} message" role="alert">' + '<i data-notify="dismiss" class="close icon"></i>' + '<span data-notify="message">{2}</span>' + '</div>';
+      notify_content = null;
+      notify_options = {};
+      alertTip = '';
+      $error_box = $(".flash_error.flash_error_box");
+      if (notify_options.type === 'error' && $error_box.length > 0 && !$.isEmptyObject(notify_content.message)) {
+        if (notify_content.message === 'captcha_fail') {
+          alertTip = "验证码不正确";
+        } else if (notify_content.message === 'captcha_expired') {
+          alertTip = "验证码已过期，请点击刷新";
+        } else if (notify_content.message === 'not_found_in_database') {
+          alertTip = "帐号或者密码错误";
+        } else if (notify_content.message === 'not_found_and_show_captcha') {
+          alertTip = "帐号或者密码错误";
+        } else if (notify_content.message === 'phone_captcha_fail') {
+          alertTip = "手机验证码不通过";
+        } else {
+          alertTip = notify_content.message;
+        }
+        return $error_box.html(alertTip).show();
+      } else if (notify_content) {
+        if ("new" === 'third_party_binding') {
+          return $('#third_party_binding-message').html(notify_content.message).addClass('ui message red');
+        }
+        notify_options.delay = 3000;
+        notify_options.template = template;
+        notify_options.offset = {
+          x: 10,
+          y: 30
+        };
+        notify_options.element = '#messages-container';
+        return $.notify(notify_content, notify_options);
+      }
+    });
+  
+  }).call(this);
+</script>
+
+</div>
+<script>
+  (function() {
+    $(function() {
+      var setCookie;
+      setCookie = function(name, value) {
+        $.cookie(name, value, {
+          path: '/',
+          expires: 365
+        });
+      };
+      $('#remove-bulletin, #remove-bulletin-dashboard').on('click', function() {
+        setCookie('remove_bulletin', "gitee-maintain-1718963312");
+        $('#git-bulletin').hide();
+      });
+      $('#remove-member-bulletin').on('click', function() {
+        setCookie('remove_member_bulletin', "gitee_member_bulletin");
+        $(this).parent().hide();
+      });
+      return $('#remove-gift-bulletin').on('click', function() {
+        setCookie('remove_gift_bulletin', "gitee-gift-bulletin");
+        $(this).parent().hide();
+      });
+    });
+  
+  }).call(this);
+</script>
+<script>
+  function closeMessageBanner(pthis, type, val) {
+    var json = {}
+  
+    val = typeof val === 'undefined' ? null : val
+    $(pthis).parent().remove()
+    if (type === 'out_of_enterprise_member') {
+      json = {type: type, data: val}
+    } else if (type === 'enterprise_overdue') {
+      json = {type: type, data: val}
+    }
+    $.post('/profile/close_flash_tip', json)
+  }
+</script>
+
+<script>
+  var userAgent = navigator.userAgent;
+  var isLessIE11 = userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1;
+  if(isLessIE11){
+    var can_access = ""
+    if (can_access != "true"){
+      window.location.href = "/incompatible.html";
+    }
+  }
+</script>
+
+<script src="https://cn-assets.gitee.com/assets/new-editor/bootstrap/transition-d4dc20bf5896a91450f177b5d763ae4a.js"></script>
+<script src="https://cn-assets.gitee.com/assets/new-editor/bootstrap/carousel-b36e4e6094e970507a7144098fc191da.js"></script>
+<style>
+  #udesk_container #udesk_btn a{
+    margin: 18px 14px 14px 18px !important;
+  }
+</style>
+<div class='session-wrapper lang-zh d-none'>
+<div class='ui container'>
+<div class='session__body'>
+<div class='session-sidebox'>
+<div class='session-sidebox__container'>
+<div class='session-sidebox__header'>
+<div class='session-sidebox__logo'>
+<img alt="logo" src="/static/images/logo.svg?t=158106664" />
+</div>
+<h1 class='session-sidebox__title'>
+</h1>
+<h2 class='session-sidebox__subtitle'>
+企业级 DevOps 研发管理平台
+</h2>
+</div>
+<div class='session-sidebox__content'>
+<div class="session-sidebox-content__container"> <div class="session-sidebox-gitee__container"> <div class="session-sidebox-gitee__item"> <div class="session-sidebox-gitee__number"> 1200 万+ </div> <div class="session-sidebox-gitee__title"> 开发者 </div> </div> <div class="session-sidebox-gitee__item"> <div class="session-sidebox-gitee__number"> 2800 万+ </div> <div class="session-sidebox-gitee__title"> 代码仓库 </div> </div> <div class="session-sidebox-gitee__item"> <div class="session-sidebox-gitee__number"> 30 万+ </div> <div class="session-sidebox-gitee__title"> 企业客户 </div> </div> <div class="session-sidebox-gitee__item"> <div class="session-sidebox-gitee__number"> 2000+ </div> <div class="session-sidebox-gitee__title"> 高校 </div> </div> </div> </div>
+</div>
+<div class='session-sidebox__footer'>
+<a target="_blank" sa_evt="click_GiteeCommunity_login_GiteeEnhot" href="/enterprises?from=login"><strong class='session-sidebox__icon-hot'>Gitee 企业版</strong>
+<span class='session-sidebox__divider'>-</span>
+企业级 DevOps 研发管理平台
+<i class="iconfont icon-arrow-circle-right "></i>
+</a></div>
+</div>
+
+</div>
+<div class='session-form'>
+<div class='session-form__container is-login'>
+<header class='session-form__header'>
+<h2 class='session-form__title'>
+<span>登录</span>
+</h2>
+<span class='pull-right'>
+没有帐号？
+<a sa_evt="click_GiteeCommunity_login_signup" href="/signup?redirect_to_url=%2Flionsoul%2Fip2region%2Fraw%2Fmaster%2Fdata%2Fip2region.xdb#lang=zh-CN">点此注册</a>
+</span>
+</header>
+<div class='session__flash-error'>
+<div class='ui message error flash_error flash_error_box'></div>
+</div>
+<form class="ui custom form session__control session-login__form session-login__with-password " data-need-verify="false" data-control="password" data-encrypt="true" data-key="password" id="new_user" action="/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="mxpoTWTyJ+5FtVYRcbqi+3M+bPMw/c0tIks3Kkm7UJZe22FhPSEvPFxYRni836+1ppMWwPf/+dL/9ypYiyOz9Q==" /><input type="hidden" name="redirect_to_url" id="redirect_to_url" value="/lionsoul/ip2region/raw/master/data/ip2region.xdb" />
+<div class='session-login__body'>
+<div class='session-form__fields'>
+<div class='git-login-form-fields'>
+<div class='field' id='git-login'>
+<input placeholder="手机／邮箱／个人空间地址" class="login-password__account-input" type="text" name="user[login]" id="user_login" />
+</div>
+<div class='field'>
+<input placeholder="请输入密码" data-encrypt="true" type="password" name="user[password]" id="user_password" />
+</div>
+<div class='two fields'>
+<div class='field'>
+<div class='ui checkbox js-checkbox' sa_evt='click_GiteeCommunity_login_remember'><input name="user[remember_me]" type="hidden" value="0" /><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" /><label>记住我</label></div>
+</div>
+<div class='field' style='text-align: right'>
+<a class="session__toggle-button" data-control="phone" sa_evt="click_GiteeCommunity_login_sms" href="">短信验证登录</a>
+</div>
+</div>
+<div class='field'>
+<input type="submit" name="commit" value="登 录" class="ui fluid orange submit button large" sa_evt="click_GiteeCommunity_login_login" />
+</div>
+<div class='field text-center'>
+<a class="forget-password" sa_evt="click_GiteeCommunity_login_forget" href="/password/new">已有帐号，忘记密码？</a>
+</div>
+</div>
+</div>
+</div>
+</form>
+
+<form class="ui custom form session__control session-login__form session-login__with-phone hide" data-control="phone" id="new_user" action="/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="zSDFOtbTD17evDQRhquuUMz4Yq/LcUzOBtyllZbUK5YI4cwWjwAHjMdRJHhLzqMeGVUYnAxzeDHbYLjnVEzI9Q==" /><input value="sms" type="hidden" name="user[login_type]" id="user_login_type" />
+<input type="hidden" name="redirect_to_url" id="redirect_to_url" value="/lionsoul/ip2region/raw/master/data/ip2region.xdb" />
+<input class='placeholder__autofill-text'>
+<div class='field'>
+<input class="session-login__phone-input" placeholder="手机号码" sa_evt="click_GiteeCommunity_login_input" type="text" name="user[login]" id="user_login" />
+</div>
+<div class='field'>
+<div class='ui right labeled input captcha-labeled'>
+<input disabled="disabled" class="session-login__captcha-input" placeholder="手机验证码" type="text" name="user[account_captcha]" id="user_account_captcha" />
+<div class='ui basic orange button session-login__captcha-button' sa_evt='click_GiteeCommunity_login_captcha'>
+发送验证码
+</div>
+
+<div class='ui danger popup captcha-popup'>
+<p style='min-width: 162px;'>
+收不到验证码？
+<a href="/self_services">获取帮助</a>
+</p>
+</div>
+<script>
+  $(function () {
+    var $captchaPopup = $('.captcha-popup');
+    var $targetButton = $captchaPopup.prev();
+  
+    if ($targetButton && $targetButton.length) {
+      $targetButton.popup({
+        popup: $captchaPopup,
+        on: 'manual',
+        position: 'right center',
+        variation: 'large',
+        transition: 'fade',
+        duration: 500,
+        lastResort: 'top center',
+        prefer: 'adjacent'
+      });
+    }
+  });
+</script>
+</div>
+</div>
+<div class='two fields'>
+<div class='field'>
+<div class='ui checkbox js-checkbox'><input name="user[remember_me]" type="hidden" value="0" /><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" /><label>记住我</label></div>
+</div>
+<div class='field' style='text-align: right'>
+<a class="session__toggle-button" data-control="password" sa_evt="click_GiteeCommunity_login_password" href="/login">用户名密码登录</a>
+</div>
+</div>
+<div class='field'>
+<input type="submit" name="commit" value="登 录" class="ui fluid orange submit button large" sa_evt="click_GiteeCommunity_login_login" />
+</div>
+<div class='field text-center'>
+<a class="forget-password" href="/password/new">已有帐号，忘记密码？</a>
+</div>
+</form>
+
+<div class='session-login-oauth'>
+<div class='session-login__oschina'>
+<a sa_evt="click_GiteeCommunity_login_thirdparty" sa_click_bottom="oschina" href="https://gitee.com/auth/oschina"><i class='icon-logo-osc iconfont osc'></i>
+<span>
+使用 OSChina 帐号登录
+</span>
+</a></div>
+<div class='session-login-oauth__container'>
+<div class='field'>
+<div class='ui horizontal divider session-login__oauth-title'>
+<span class='text-muted'>
+其他方式登录
+</span>
+</div>
+</div>
+<div class='ui horizontal list session-oauth__list'>
+<div class='item'>
+<a sa_evt="click_GiteeCommunity_login_thirdparty" sa_click_bottom="aliyun" href="https://gitee.com/auth/aliyun"><div class='git-other-login-icon'>
+<i class='aliyun icon-logo_aliyun iconfont' title='使用阿里云帐号登录'></i>
+</div>
+</a></div>
+<div class='item'>
+<a sa_evt="click_GiteeCommunity_login_thirdparty" sa_click_bottom="gitlab" href="https://gitee.com/auth/gitlab"><div class='git-other-login-icon'>
+<i class='gitlab icon-logo-gitlab iconfont' title='使用 GitLab 帐号登录'></i>
+</div>
+</a></div>
+<div class='item'>
+<a sa_evt="click_GiteeCommunity_login_thirdparty" sa_click_bottom="huawei" href="https://gitee.com/auth/huawei"><div class='git-other-login-icon'>
+<i class='huawei icon-logo_huawei iconfont' title='使用华为帐号登录'></i>
+</div>
+</a></div>
+<div class='item'>
+<a sa_evt="click_GiteeCommunity_login_thirdparty" sa_click_bottom="github" href="https://gitee.com/auth/github"><div class='git-other-login-icon'>
+<i class='github icon-logo-github iconfont' title='使用 GitHub 帐号登录'></i>
+</div>
+</a></div>
+<div class='item'>
+<span class='session-oauth__other-icon js-popup-default' data-popup-hoverable='true' data-position='left center'>
+<i class="iconfont icon-ic-action-more "></i>
+</span>
+<div class='ui flowing popup session-oauth__other'>
+<div class='session-oauth__other-list'>
+<a class="item" sa_evt="click_GiteeCommunity_login_thirdparty" sa_click_bottom="weibo" href="https://gitee.com/auth/weibo"><div class='git-other-login-icon'>
+<i class='icon-logo-weibo iconfont weibo' title='使用 Weibo 帐号登录'></i>
+</div>
+</a><a class="item" sa_evt="click_GiteeCommunity_login_thirdparty" sa_click_bottom="qq_connect" href="https://gitee.com/auth/qq_connect"><div class='git-other-login-icon'>
+<i class='icon-logo-qq iconfont qq' title='使用 QQ 帐号登录'></i>
+</div>
+</a><a class="item" sa_evt="click_GiteeCommunity_login_thirdparty" sa_click_bottom="windowslive" href="https://gitee.com/auth/windowslive"><div class='git-other-login-icon'>
+<i class='icon-logo-windows iconfont windows' title='使用 WindowsLive 帐号登录'></i>
+</div>
+</a><a class="item" sa_evt="click_GiteeCommunity_login_thirdparty" sa_click_bottom="wechat" href="https://gitee.com/auth/wechat"><div class='git-other-login-icon'>
+<i class='icon-logo_wechat iconfont wechat' title='使用微信帐号登录'></i>
+</div>
+</a><a class="item" sa_evt="click_GiteeCommunity_login_thirdparty" sa_click_bottom="dingding" href="https://gitee.com/auth/dingding"><div class='git-other-login-icon'>
+<i class='dingding icon-logo-dingding iconfont' title='使用钉钉帐号登录'></i>
+</div>
+</a><a class="item" sa_evt="click_GiteeCommunity_login_thirdparty" sa_click_bottom="trustie" href="https://gitee.com/auth/trustie"><div class='git-other-login-icon'>
+<i class='icon-logo_trustie iconfont trustie' title='使用 Trustie 帐号登录'></i>
+</div>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='tips text-center js-change-oversea-login-page mt-3'>
+<a class='mt-3' href='#lang=en' sa_evt='ov_jumpToOversea' sa_from_type='登录'>
+海外华人？使用英文版登录 /   Non-China users? Click here
+</a>
+</div>
+
+<script>
+  if (window.sensors) {
+    window.sensors.track('view_GiteeCommunity_login');
+  }
+</script>
+</div>
+
+
+</div>
+</div>
+<div class='session__footer container'>
+<span class='session__footer-item'>
+<a target="_blank" sa_evt="click_GiteeCommunity_signup_login_bottomtab" sa_click_bottom="Gitee.com" href="https://gitee.com/">© Gitee.com</a>
+</span>
+<span class='session__footer-item'>
+<a sa_evt="click_GiteeCommunity_signup_login_bottomtab" sa_click_bottom="关于我们" href="/about_us">关于我们</a>
+</span>
+<span class='session__footer-item'>
+<a sa_evt="click_GiteeCommunity_signup_login_bottomtab" sa_click_bottom="使用条款" href="/terms">使用条款</a>
+</span>
+<span class='session__footer-item'>
+<a sa_evt="click_GiteeCommunity_signup_login_bottomtab" sa_click_bottom="帮助文档" href="https://help.gitee.com">帮助文档</a>
+</span>
+<span class='session__footer-item'>
+<a sa_evt="click_GiteeCommunity_signup_login_bottomtab" sa_click_bottom="在线自助服务" href="/self_services">在线自助服务</a>
+</span>
+<span class='session__footer-item'>
+<a sa_evt="click_GiteeCommunity_signup_login_bottomtab" sa_click_bottom="重发激活邮件" href="/user/activate">重发激活邮件</a>
+</span>
+</div>
+
+</div>
+</div>
+<div class='session-en-wrapper lang-en d-none'>
+<div class='session-en__body bg-white'>
+<div class='index-wrapper'>
+<div class='header-wrapper'>
+<div class='header d-flex-center'>
+<div class='container d-flex-between'>
+<div class='left'>
+</div>
+<div class='center'>
+<img class="logo" src="https://cn-assets.gitee.com/assets/logo-ab55995e37e5dd6b6914f640de8c0f1e.png" alt="Logo" />
+</div>
+<div class='right'></div>
+</div>
+<div class='header-hr'></div>
+</div>
+</div>
+
+<div class='container'>
+<h1 class='title'>Welcome to Gitee</h1>
+<div class='session-en__form'>
+<a sa_evt="ov_clickGoogleBtn" sa_continue_title="google" href="https://gitee.com/auth/google_oauth2"><div class='button login-btn w400 d-flex-center google-login blue-login-btn'>
+<img class="google-logo left" src="https://cn-assets.gitee.com/assets/i18n/google-logo-52e1136adec4a20c6c25dae1686a878d.svg" alt="Google logo" />
+<div class='right'>Continue with Google</div>
+</div>
+</a><a sa_evt="ov_clickGoogleBtn" sa_continue_title="github" href="https://gitee.com/auth/github"><div class='button login-btn w400 d-flex-center github-login black-login-btn'>
+<img class="github-logo left" src="https://cn-assets.gitee.com/assets/i18n/github-logo-c99138751876696c092b4221c7848c96.svg" alt="Github logo" />
+<div class='right'>Continue with Github</div>
+</div>
+</a><div class='ui horizontal divider w400'>OR</div>
+<div class='ui input email-input field w400 js-email-input-wrapper'>
+<input class='js-email-input' placeholder='please enter your email' type='email'>
+</div>
+<div class='ui small error text mt-2 text-left w400 js-email-message d-none-important'>please enter your vaild email</div>
+<div class='w400 submit-email orange-submit-button mt-2 ui button js-continue-email' sa_continue_title='email' sa_evt='ov_clickGoogleBtn' tabindex='0'>Continue with Email</div>
+<div class='message-text w400 text-left mt-3'>
+<span>By creating an account, you agree to the</span>
+<a href='/terms'>Terms of Use</a>
+<span>as well as</span>
+<a href='/inactive_accounts'>Non-active Account Processing Specification</a>
+<div class='goto-china-login-page mt-1'>
+<span>如果您是中国用户，可以</span>
+<a class="js-change-china-login-page" sa_evt="ov_jumpToChineseLogin" sa_login_type="login" href="#lang=zh-CN">跳转到中文版登陆页</a>
+<a sa_evt="ov_jumpToChineseLogin" sa_login_type="signup" href="/signup#lang=zh-CN">，或者中文版注册页</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='signup-wrapper d-none'>
+<div class='header-wrapper'>
+<div class='header d-flex-center'>
+<div class='container d-flex-between'>
+<div class='left'>
+<div class='return-wrapper d-align-center'>
+<img class="return-img" src="https://cn-assets.gitee.com/assets/i18n/return-68ac94bb6416c186c44af2a002e87335.svg" alt="Return" />
+<div class='text ml-1'>return</div>
+</div>
+</div>
+<div class='center'>
+<img class="logo" src="https://cn-assets.gitee.com/assets/logo-ab55995e37e5dd6b6914f640de8c0f1e.png" alt="Logo" />
+</div>
+<div class='right'></div>
+</div>
+<div class='header-hr'></div>
+</div>
+</div>
+
+<div class='container'>
+<h1 class='title'>No Gitee account related to this email</h1>
+<div class='session-en__form'>
+<h5 class='w400 sub-title text-left mb-3'>Only one step left to create a account</h5>
+<div class='row w400 d-align-center'>
+<div class='left'>
+<img class="email-img icon" src="https://cn-assets.gitee.com/assets/i18n/email-03f79609c41a5d2bbe87f1fe9f0dbf87.svg" alt="Email" />
+</div>
+<div class='right ml6 text'>email</div>
+</div>
+<div class='w400 email-value value text-left mt-1 mb-3'></div>
+<div class='row w400 d-align-center'>
+<div class='left'>
+<img class="verification-code-img icon" src="https://cn-assets.gitee.com/assets/i18n/verification-code-48f1c135c0d66b0db2e7cd0ed02a88f7.svg" alt="Verification code" />
+</div>
+<div class='right ml6 text'>verification code</div>
+</div>
+<div class='ui button send-ver-btn w400 mt-1'>Send me the verification code</div>
+<div class='ui input js-input-ver-wrapper w400 mt-1 d-none-important'>
+<input class='input js-ver-input'>
+<div class='resend-btn text orange'>Resend</div>
+</div>
+<div class='ui small error text mt-2 text-left w400 js-signup-ver-message d-none-important'></div>
+<div class='ui button create-account-btn js-create-account-btn mt-4' tabindex='0'>Create account</div>
+</div>
+</div>
+</div>
+<div class='signed-en-wrapper d-none'>
+<div class='header-wrapper'>
+<div class='header d-flex-center'>
+<div class='container d-flex-between'>
+<div class='left'>
+<div class='return-wrapper d-align-center'>
+<img class="return-img" src="https://cn-assets.gitee.com/assets/i18n/return-68ac94bb6416c186c44af2a002e87335.svg" alt="Return" />
+<div class='text ml-1'>return</div>
+</div>
+</div>
+<div class='center'>
+<img class="logo" src="https://cn-assets.gitee.com/assets/logo-ab55995e37e5dd6b6914f640de8c0f1e.png" alt="Logo" />
+</div>
+<div class='right'></div>
+</div>
+<div class='header-hr'></div>
+</div>
+</div>
+
+<div class='container'>
+<h1 class='title'>
+Your  email has a Gitee account
+</h1>
+<div class='session-en__form'>
+<h5 class='w400 sub-title text-left mb-3'>
+If  Gitee account is yours, please bind it with your  account by verifying your password
+</h5>
+<div class='ui button go-login-btn orange w400 mt-4'>Yes，that's mine</div>
+<div class='ui button go-back-btn w400 mt-4'>Go Back</div>
+</div>
+</div>
+</div>
+<form action='/login' data-encrypt='true' data-key='password' id='oversea-login-form' method='POST'>
+<div class='login-wrapper d-none'>
+<div class='header-wrapper'>
+<div class='header d-flex-center'>
+<div class='container d-flex-between'>
+<div class='left'>
+<div class='return-wrapper d-align-center'>
+<img class="return-img" src="https://cn-assets.gitee.com/assets/i18n/return-68ac94bb6416c186c44af2a002e87335.svg" alt="Return" />
+<div class='text ml-1'>return</div>
+</div>
+</div>
+<div class='center'>
+<img class="logo" src="https://cn-assets.gitee.com/assets/logo-ab55995e37e5dd6b6914f640de8c0f1e.png" alt="Logo" />
+</div>
+<div class='right'></div>
+</div>
+<div class='header-hr'></div>
+</div>
+</div>
+
+<div class='container'>
+<h1 class='title title-text'></h1>
+<div class='session-en__form'>
+<h5 class='w400 sub-title text-left mb-3 subtitle-text'>
+This will bind your  account with  Gitee account. If it's binding another  account,it will unbind first.
+</h5>
+<div class='row w400 d-align-center'>
+<div class='left'>
+<img class="email-img icon" src="https://cn-assets.gitee.com/assets/i18n/email-03f79609c41a5d2bbe87f1fe9f0dbf87.svg" alt="Email" />
+</div>
+<div class='right ml6 text'>email</div>
+</div>
+<div class='w400 email-value value text-left mt-1 mb-3'></div>
+<div class='row w400 d-align-center'>
+<div class='left'>
+<img class="password-img icon" src="https://cn-assets.gitee.com/assets/i18n/password-620a1d0e7f144cb79fdc0fa4cd337b95.svg" alt="Password" />
+</div>
+<div class='right ml6 text'>password</div>
+</div>
+<input name='utf8' type='hidden' value='✓'>
+<input class='js-redirect_to_url' name='redirect_to_url' type='hidden' value='/lionsoul/ip2region/raw/master/data/ip2region.xdb'>
+<input class='js-hidden-authenticity_token' name='authenticity_token' type='hidden' value=''>
+<input class='js-hidden-username-input' name='user[login]' type='hidden'>
+<input name='captcha_type' type='hidden' value='captcha'>
+<input class='js-hidden-captcha' name='captcha' type='hidden' value=''>
+<input name='user[remember_me]' type='hidden' value='1'>
+<div class='ui input js-input-password-wrapper w400 mt-1'>
+<input autocomplete='on' class='input js-password-input' data-encrypt='true' name='user[password]' type='password'>
+</div>
+<div class='ui input js-input-verify-wrapper d-none-important w400 mt-1'>
+<input class='input js-captcha-input' maxlength='8' placeholder='please enter verification code'>
+<img class="login-captcha-img" src="" />
+</div>
+<div class='ui small error text mt-2 text-left w400 js-login-message d-none-important'></div>
+<div class='ui button orange js-login-btn login-disable mt-4 w400'>Log in</div>
+<a class='forget-btn mt-3' href='/password/new'>Forget password?</a>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div class='session__footer container'>
+<span class='session__footer-item'>
+<a target="_blank" sa_evt="click_GiteeCommunity_signup_login_bottomtab" sa_click_bottom="Gitee.com" href="https://gitee.com/">© Gitee.com</a>
+</span>
+<span class='session__footer-item'>
+<a sa_evt="click_GiteeCommunity_signup_login_bottomtab" sa_click_bottom="关于我们" href="/about_us">About Us</a>
+</span>
+<span class='session__footer-item'>
+<a sa_evt="click_GiteeCommunity_signup_login_bottomtab" sa_click_bottom="使用条款" href="/terms">Terms of use</a>
+</span>
+<span class='session__footer-item'>
+<a sa_evt="click_GiteeCommunity_signup_login_bottomtab" sa_click_bottom="帮助文档" href="https://help.gitee.com">Help Center</a>
+</span>
+<span class='session__footer-item'>
+<a sa_evt="click_GiteeCommunity_signup_login_bottomtab" sa_click_bottom="在线自助服务" href="/self_services">Self-services</a>
+</span>
+<span class='session__footer-item'>
+<a sa_evt="click_GiteeCommunity_signup_login_bottomtab" sa_click_bottom="重发激活邮件" href="/user/activate">resend email to activate account</a>
+</span>
+</div>
+
+</div>
+<script>
+  window.gon.is_oversea = true
+</script>
+
+
+<script>
+  gon.globalLang = {
+    login: "帐号",
+    username: "用户名",
+    nickname: "姓名",
+    path: "个人空间地址",
+    phone: "手机号码",
+    email: "邮箱",
+    phone_or_email: "手机或邮箱",
+    password: "密码",
+    code: "识别码",
+    sending: "正在发送...",
+    sended: "已发送",
+    resend: "秒后可重发",
+    captcha: "验证码",
+    resend_captcha: "重发验证码",
+    phone_captcha: "手机验证码",
+    email_captcha: "邮箱验证",
+    read_and_accept_clause: "请阅读并同意我们的服务条款",
+  
+    user_name_error: "昵称不能为空，或包含空格",
+    namespace_name_error: "仅支持至少两位，中文/英文/数字/下划线/中划线/圆括号，不能以下划线/中划线开头或结尾，不可包含 /",
+    username_format_error: "地址只允许字母、数字或者下划线（_）、中划线（-），至少 2 个字符，必须以字母开头，不能以特殊字符结尾",
+    account_invalid_error: "请输入正确的手机号码（支持澳门台湾）或邮箱",
+    password_invalid_error: "密码必须包含数字，且必须包含字母或其它符号（!@_#$%^&*()-+=,.?）",
+    phone_error: "手机号码格式不正确",
+    captcha_fail: "验证码不正确",
+    captcha_expired: "验证码已过期，请点击刷新",
+    not_found_in_database: "帐号或者密码错误",
+    not_found_and_show_captcha: "帐号或者密码错误",
+    account: "手机号码"
+  };
+</script>
+
+</div>
+</body>
+</html>
