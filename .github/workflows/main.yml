@@ -52,7 +52,9 @@ jobs:
         run: cd geolite && wget https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb -O GeoLite2-Country.mmdb
       
       - name: Update ip2region
-        run: cd ip2region && https://gitee.com/lionsoul/ip2region/raw/master/data/ip2region.xdb -O ip2region.xdb
+        run: |
+          git clone https://gitee.com/lionsoul/ip2region lionsoul
+          mv lionsoul/data/ip2region.xdb ip2region/ip2region.xdb
         
       - name: Commit and Push changes
         run: |
