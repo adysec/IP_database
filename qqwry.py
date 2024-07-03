@@ -1,6 +1,7 @@
 import re
 import json
 import requests
+import os
 from bs4 import BeautifulSoup
 
 def get_link(url):
@@ -39,6 +40,7 @@ if __name__ == '__main__':
             zip_url = get_zip_url(link)
             if zip_url and zip_url != "None" and zip_url is not None:
                 print(zip_url[0])
+                os.system('wget --no-check-certificate --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" '+zip_url[0])
             else:
                 print("没有找到zip链接")
         else:
