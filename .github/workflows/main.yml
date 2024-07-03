@@ -59,6 +59,19 @@ jobs:
       - name: Update 17monipdb
         run: wget https://github.com/igreedy/ip_finder/raw/master/17monipdb.dat -O 17monipdb/17monipdb.dat
         
+      - name: Update ipv6wry
+        run: wget https://raw.githubusercontent.com/ZX-Inc/zxipdb-python/main/data/ipv6wry.db -O ipv6wry/ipv6wry.db
+      
+      - name: Update IPDB
+        run: wget https://raw.githubusercontent.com/ipipdotnet/ipdb-go/master/city.free.ipdb -O ipdb/city.free.ipdb
+        
+      - name: Update DB-IP City
+        run: wget "https://download.db-ip.com/free/dbip-city-lite-$(date +%Y-%m).mmdb.gz" -O ip-db/dbip-city-lite.mmdb.gz
+      - name: Update DB-IP ASN
+        run: wget "https://download.db-ip.com/free/dbip-asn-lite-$(date +%Y-%m).mmdb.gz" -O ip-db/dbip-asn-lite.mmdb.gz
+      - name: Update DB-IP Country
+        run: wget "https://download.db-ip.com/free/dbip-country-lite-$(date +%Y-%m).mmdb.gz" -O ip-db/dbip-country-lite.mmdb.gz
+
       - name: Commit and Push changes
         run: |
           echo $(date +'%Y%m%d') > date.txt
