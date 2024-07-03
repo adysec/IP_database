@@ -74,6 +74,7 @@ jobs:
 
       - name: Commit and Push changes
         run: |
+          mv ip-db db-ip
           echo $(date +'%Y%m%d') > date.txt
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
