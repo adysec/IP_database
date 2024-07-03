@@ -120,7 +120,13 @@ jobs:
               echo "File has not changed"
             fi
           fi
-
+      - name: Delete Other File
+        id: check
+        run: |
+          rm -rf innoextract*
+          rm -rf setup.exe
+          rm -rf app
+          rm -rf Downloads
       - name: Commit qqwry.dat
         if: env.RUN_NEXT_STEP == 'true'
         env:
