@@ -41,12 +41,14 @@ jobs:
         run: |
           unzip *.zip setup.exe
           ./innoextract setup.exe -I qqwry.dat
-          mv app/qqwry.dat qqwry.dat
+          mv app/qqwry.dat qqwry/qqwry.dat
 
       - name: Delete Other File
         run: |
           rm -rf innoextract*
           rm -rf setup.exe
+          rm -rf *.zip
+          rm -rf qqwry.dat
           rm -rf app/
           rm -rf Downloads/
       - name: Commit qqwry.dat
