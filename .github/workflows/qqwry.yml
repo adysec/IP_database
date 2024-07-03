@@ -47,7 +47,7 @@ jobs:
       - name: Delete Other File
         run: |
           rm -rf setup.exe
-          rm -rf *.zip
+          rm -rf *.zip*
           rm -rf qqwry.dat
           rm -rf app/
           rm -rf Downloads/
