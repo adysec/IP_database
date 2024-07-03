@@ -66,9 +66,7 @@ jobs:
         run: wget https://raw.githubusercontent.com/ipipdotnet/ipdb-go/master/city.free.ipdb -O ipdb/city.free.ipdb
       
       - name: Update DB-IP City
-        run: |
-          mv ip-db db-ip
-          wget "https://download.db-ip.com/free/dbip-city-lite-$(date +%Y-%m).mmdb.gz" -O db-ip/dbip-city-lite.mmdb.gz
+        run: wget "https://download.db-ip.com/free/dbip-city-lite-$(date +%Y-%m).mmdb.gz" -O db-ip/dbip-city-lite.mmdb.gz
       - name: Update DB-IP ASN
         run: wget "https://download.db-ip.com/free/dbip-asn-lite-$(date +%Y-%m).mmdb.gz" -O db-ip/dbip-asn-lite.mmdb.gz
       - name: Update DB-IP Country
