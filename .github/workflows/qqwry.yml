@@ -32,46 +32,13 @@ jobs:
           pip install requests
           pip install bs4
       
-      - name: Get download link from WeChat tweet
+      - name: Get download link from WeChat
         run: |
-          link=$(python qqwry.py)
-          if [ -z "$link" ]; then
-            echo "No link found, exiting"
-            exit 0
-          fi
-            echo ${link}
-            echo "LINK=${link}" >> $GITHUB_ENV
-      
-      - name: Use link to download newest Zip with retry
-        run: |
-          link=${{ env.LINK }}
-          mkdir -p Downloads
-          cd Downloads
-          retries=0
-          max_retries=3
-          while [ $retries -lt $max_retries ]; do
-            wget --no-check-certificate --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" $link
-            if [ $? -eq 0 ]; then
-              break
-            fi
-            retries=$((retries+1))
-            sleep 10
-          done
-      
-      - name: Download innoextract
-        if: steps.cache-innoextract.outputs.cache-hit != 'true'
-        run: |
-          wget https://github.com/dscharrer/innoextract/releases/download/${{ env.innoextract_version }}/innoextract-${{ env.innoextract_version }}-linux.tar.xz
-          tar -xvf innoextract-${{ env.innoextract_version }}-linux.tar.xz innoextract-${{ env.innoextract_version }}-linux/bin/${{ env.arch }}/innoextract --strip-components 3
+          python qqwry.py
 
       - name: Get qqwry.dat
-        id: dat_date
         shell: pwsh
         run: |
-          $zip = (Get-ChildItem Downloads\*.zip)[0].FullName
-          $filename = (Get-ChildItem Downloads\*.zip)[0].Name
-          $name = $filename.Substring($filename.IndexOf('-') + 1 , $filename.length - $filename.IndexOf('-') - 5)
-          echo "dat_date=$name" | Out-File -FilePath $env:GITHUB_ENV
           7z e -y $zip setup.exe
           ./innoextract setup.exe -I qqwry.dat
 
