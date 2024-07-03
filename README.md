@@ -56,6 +56,45 @@ https://raw.githubusercontent.com/adysec/IP_database/main/17monipdb/ip2region.da
 国内下载直链
 https://raw.gitmirror.com/adysec/IP_database/main/17monipdb/ip2region.dat
 ```
+## ipv6wry
+ipv6wry 数据库文件
+```
+下载直链
+https://raw.githubusercontent.com/adysec/IP_database/main/ipv6wry/ipv6wry.db
+国内下载直链
+https://raw.gitmirror.com/adysec/IP_database/main/ipv6wry/ipv6wry.db
+```
+## IPDB
+IPDB 数据库文件
+```
+下载直链
+https://raw.githubusercontent.com/adysec/IP_database/main/ipdb/city.free.ipdb
+国内下载直链
+https://raw.gitmirror.com/adysec/IP_database/main/ipdb/city.free.ipdb
+```
+## DB-IP
+DB-IP 数据库文件
+### dbip 城市归属地
+```
+下载直链
+https://raw.githubusercontent.com/adysec/IP_database/main/db-ip/dbip-city-lite.mmdb.gz
+国内下载直链
+https://raw.gitmirror.com/adysec/IP_database/main/db-ip/dbip-city-lite.mmdb.gz
+```
+### dbip ASN归属
+```
+下载直链
+https://raw.githubusercontent.com/adysec/IP_database/main/db-ip/dbip-asn-lite.mmdb.gz
+国内下载直链
+https://raw.gitmirror.com/adysec/IP_database/main/db-ip/dbip-asn-lite.mmdb.gz
+```
+### dbip 国家归属地
+```
+下载直链
+https://raw.githubusercontent.com/adysec/IP_database/main/db-ip/dbip-country-lite.mmdb.gz
+国内下载直链
+https://raw.gitmirror.com/adysec/IP_database/main/db-ip/dbip-country-lite.mmdb.gz
+```
 ## Thanks
 `https://github.com/nmgliangwei/qqwry`删去了下载innoextract等工作流
 
