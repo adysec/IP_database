@@ -41,20 +41,19 @@ jobs:
         run: |
           unzip *.zip setup.exe
           ./innoextract setup.exe -I qqwry.dat
+          mv app/qqwry.dat qqwry.dat
 
       - name: Delete Other File
         run: |
           rm -rf innoextract*
           rm -rf setup.exe
-          rm -rf app
-          rm -rf Downloads
+          rm -rf app/
+          rm -rf Downloads/
       - name: Commit qqwry.dat
         run: |
           echo $(date +'%Y%m%d') > date.txt
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          if ! git status -s | grep qqwry.dat --quiet; then
-            git add .
-            git commit -am "$(date +'%Y%m%d')"
-            git push -v --progress
-          fi
+          git add .
+          git commit -am "$(date +'%Y%m%d')"
+          git push -v --progress
