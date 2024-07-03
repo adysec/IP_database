@@ -1,4 +1,4 @@
-name: Daily Update qqwry
+name: Daily Update qqwry geolite
 
 on:
   push:
@@ -31,27 +31,27 @@ jobs:
         run: |
           pip install requests
           pip install bs4
-      
-      - name: Get download link from WeChat
-        run: |
-          python qqwry.py
 
-      - name: Get qqwry.dat
+      - name: Update qqwry.dat
         shell: pwsh
         run: |
+          python qqwry.py
           unzip *.zip setup.exe
           chmod +x innoextract
           ./innoextract setup.exe -I qqwry.dat
           mv app/qqwry.dat qqwry/qqwry.dat
-
-      - name: Delete Other File
-        run: |
           rm -rf setup.exe
           rm -rf *.zip*
-          rm -rf qqwry.dat
           rm -rf app/
-          rm -rf Downloads/
-      - name: Commit qqwry.dat
+          
+      - name: Update GeoLite2-ASN
+        run: cd geolite && wget https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-ASN.mmdb -O GeoLite2-ASN.mmdb
+      - name: Update GeoLite2-City
+        run: cd geolite && wget https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-City.mmdb -O GeoLite2-City.mmdb
+      - name: Update GeoLite2-City
+        run: cd geolite && wget https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb -O GeoLite2-Country.mmdb
+      
+      - name: Commit and Push changes
         run: |
           echo $(date +'%Y%m%d') > date.txt
           git config --local user.email "action@github.com"
