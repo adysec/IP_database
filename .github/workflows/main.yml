@@ -58,7 +58,7 @@ jobs:
           wget https://github.com/lionsoul2014/ip2region/raw/master/data/ip.merge.txt -O ip.merge.txt
           
       - name: Update 17monipdb
-        run: cd 17monipdb && wget https://github.com/igreedy/ip_finder/raw/master/17monipdb.dat -O 17monipdb/17monipdb.dat
+        run: wget https://github.com/igreedy/ip_finder/raw/master/17monipdb.dat -O 17monipdb/17monipdb.dat
         
       - name: Commit and Push changes
         run: |
