@@ -1,13 +1,12 @@
-name: build
+name: Daily Update qqwry
+
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: '10 2,5,9,12,15 * * *'
   push:
     branches:
       - main
-    paths-ignore:
-      - 'README.md'
+  schedule:
+    - cron: '0 12 * * *'
+    
 env:
   innoextract_version: 1.9
   arch: amd64
@@ -27,15 +26,7 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      
-      - name: Caching dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: | 
-            ${{ runner.os }}-pip-
-      
+
       - name: Install dependencies
         run: |
           pip install requests
@@ -66,13 +57,6 @@ jobs:
             retries=$((retries+1))
             sleep 10
           done
-
-      - name: Cache innoextract
-        uses: actions/cache@v3
-        id: cache-innoextract
-        with:
-          path: innoextract
-          key: ${{ runner.os }}-innoextract-${{ env.innoextract_version }}
       
       - name: Download innoextract
         if: steps.cache-innoextract.outputs.cache-hit != 'true'
@@ -91,35 +75,6 @@ jobs:
           7z e -y $zip setup.exe
           ./innoextract setup.exe -I qqwry.dat
 
-      - name: Check if tag exists
-        run: |
-          git fetch --tags
-          echo "Value of dat_date: ${{ env.dat_date }}"
-          if git rev-parse ${{ env.dat_date }} >/dev/null 2>&1; then
-            echo "Tag already exists, skipping create release"
-            echo "TAG_EXISTS=true" >> $GITHUB_ENV
-          fi
-
-      - name: Calculate file hash value
-        id: calculate_hash_value
-        run: |
-          echo "FILE_HASH=$(sha256sum qqwry/qqwry.dat | awk '{ print $1 }')" >> $GITHUB_ENV
-
-      - name: Check for changes in qqwry.dat
-        id: check
-        run: |
-          if [ ! -f qqwry.dat ]; then
-            echo "File does not exist"
-            echo "RUN_NEXT_STEP=true" >> $GITHUB_ENV
-          else
-            #比较上面的两个hash值是否相等
-            if [ "${{ env.FILE_HASH }}" != "${{ env.REPO_HASH }}" ]; then
-              echo "File has changed"
-              echo "RUN_NEXT_STEP=true" >> $GITHUB_ENV
-            else
-              echo "File has not changed"
-            fi
-          fi
       - name: Delete Other File
         run: |
           rm -rf innoextract*
@@ -127,10 +82,6 @@ jobs:
           rm -rf app
           rm -rf Downloads
       - name: Commit qqwry.dat
-        if: env.RUN_NEXT_STEP == 'true'
-        env:
-          GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
-          GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
         run: |
           echo $(date +'%Y%m%d') > date.txt
           git config --local user.email "action@github.com"
