@@ -39,7 +39,7 @@ jobs:
       - name: Get qqwry.dat
         shell: pwsh
         run: |
-          7z e -y $zip setup.exe
+          unzip *.zip setup.exe
           ./innoextract setup.exe -I qqwry.dat
 
       - name: Delete Other File
