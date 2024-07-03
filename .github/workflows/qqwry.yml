@@ -45,7 +45,6 @@ jobs:
 
       - name: Delete Other File
         run: |
-          rm -rf innoextract*
           rm -rf setup.exe
           rm -rf *.zip
           rm -rf qqwry.dat
