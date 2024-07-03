@@ -55,6 +55,9 @@ jobs:
         run: |
           git clone https://gitee.com/lionsoul/ip2region lionsoul
           mv lionsoul/data/ip2region.xdb ip2region/ip2region.xdb
+          
+      - name: Update 17monipdb
+        run: cd 17monipdb && wget https://github.com/igreedy/ip_finder/raw/master/17monipdb.dat -O 17monipdb/17monipdb.dat
         
       - name: Commit and Push changes
         run: |
