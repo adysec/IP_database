@@ -1,4 +1,4 @@
-name: Daily Update qqwry geolite
+name: Daily Update IP database
 
 on:
   push:
@@ -45,23 +45,23 @@ jobs:
           rm -rf app/
           
       - name: Update GeoLite2-ASN
-        run: cd geolite && wget https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-ASN.mmdb -O GeoLite2-ASN.mmdb
+        run: wget https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-ASN.mmdb -O geolite/GeoLite2-ASN.mmdb
       - name: Update GeoLite2-City
-        run: cd geolite && wget https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-City.mmdb -O GeoLite2-City.mmdb
+        run: wget https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-City.mmdb -O geolite/GeoLite2-City.mmdb
       - name: Update GeoLite2-City
-        run: cd geolite && wget https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb -O GeoLite2-Country.mmdb
+        run: wget https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb -O geolite/GeoLite2-Country.mmdb
       
       - name: Update ip2region
         run: |
-          cd ip2region
-          wget https://github.com/lionsoul2014/ip2region/raw/master/data/ip2region.xdb -O ip2region.xdb
-          wget https://github.com/lionsoul2014/ip2region/raw/master/data/ip.merge.txt -O ip.merge.txt
+          wget https://github.com/lionsoul2014/ip2region/raw/master/data/ip2region.xdb -O ip2region/ip2region.xdb
+          wget https://github.com/lionsoul2014/ip2region/raw/master/data/ip.merge.txt -O ip2region/ip.merge.txt
           
       - name: Update 17monipdb
         run: wget https://github.com/igreedy/ip_finder/raw/master/17monipdb.dat -O 17monipdb/17monipdb.dat
         
       - name: Commit and Push changes
         run: |
+          rm -rf lionsoul
           echo $(date +'%Y%m%d') > date.txt
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
