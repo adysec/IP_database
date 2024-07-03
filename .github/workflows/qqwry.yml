@@ -121,7 +121,6 @@ jobs:
             fi
           fi
       - name: Delete Other File
-        id: check
         run: |
           rm -rf innoextract*
           rm -rf setup.exe
