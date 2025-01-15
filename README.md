@@ -70,21 +70,21 @@ DB-IP 数据库文件
 ```
 dbip 城市归属地
 下载直链
-https://raw.githubusercontent.com/adysec/IP_database/main/db-ip/dbip-city-lite.mmdb.gz
+https://raw.githubusercontent.com/adysec/IP_database/main/db-ip/dbip-city-lite.mmdb
 国内下载直链
-https://raw.gitmirror.com/adysec/IP_database/main/db-ip/dbip-city-lite.mmdb.gz
+https://raw.gitmirror.com/adysec/IP_database/main/db-ip/dbip-city-lite.mmdb
 
 dbip ASN归属
 下载直链
-https://raw.githubusercontent.com/adysec/IP_database/main/db-ip/dbip-asn-lite.mmdb.gz
+https://raw.githubusercontent.com/adysec/IP_database/main/db-ip/dbip-asn-lite.mmdb
 国内下载直链
-https://raw.gitmirror.com/adysec/IP_database/main/db-ip/dbip-asn-lite.mmdb.gz
+https://raw.gitmirror.com/adysec/IP_database/main/db-ip/dbip-asn-lite.mmdb
 
 dbip 国家归属地
 下载直链
-https://raw.githubusercontent.com/adysec/IP_database/main/db-ip/dbip-country-lite.mmdb.gz
+https://raw.githubusercontent.com/adysec/IP_database/main/db-ip/dbip-country-lite.mmdb
 国内下载直链
-https://raw.gitmirror.com/adysec/IP_database/main/db-ip/dbip-country-lite.mmdb.gz
+https://raw.gitmirror.com/adysec/IP_database/main/db-ip/dbip-country-lite.mmdb
 ```
 ## Thanks
 `https://github.com/nmgliangwei/qqwry`删去了下载innoextract等工作流
