@@ -63,11 +63,11 @@ jobs:
         run: wget https://raw.githubusercontent.com/ipipdotnet/ipdb-go/master/city.free.ipdb -O ipdb/city.free.ipdb
       
       - name: Update DB-IP City
-        run: wget "https://download.db-ip.com/free/dbip-city-lite-$(date +%Y-%m).mmdb.gz" -O db-ip/dbip-city-lite.mmdb.gz
+        run: wget "https://cdn.jsdelivr.net/npm/@ip-location-db/dbip-city-mmdb/dbip-city-ipv4.mmdb" -O db-ip/dbip-city-lite.mmdb
       - name: Update DB-IP ASN
-        run: wget "https://download.db-ip.com/free/dbip-asn-lite-$(date +%Y-%m).mmdb.gz" -O db-ip/dbip-asn-lite.mmdb.gz
+        run: wget "https://cdn.jsdelivr.net/npm/@ip-location-db/dbip-asn-mmdb/dbip-asn-ipv4.mmdb" -O db-ip/dbip-asn-lite.mmdb
       - name: Update DB-IP Country
-        run: wget "https://download.db-ip.com/free/dbip-country-lite-$(date +%Y-%m).mmdb.gz" -O db-ip/dbip-country-lite.mmdb.gz
+        run: wget "https://cdn.jsdelivr.net/npm/@ip-location-db/dbip-country-mmdb/dbip-country-ipv4.mmdb" -O db-ip/dbip-country-lite.mmdb
 
       - name: Commit and Push changes
         run: |
