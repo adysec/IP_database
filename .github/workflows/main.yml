@@ -58,9 +58,6 @@ jobs:
           
       - name: Update 17monipdb
         run: wget https://github.com/igreedy/ip_finder/raw/master/17monipdb.dat -O 17monipdb/17monipdb.dat
-        
-      - name: Update ipv6wry
-        run: wget https://raw.githubusercontent.com/ZX-Inc/zxipdb-python/main/data/ipv6wry.db -O ipv6wry/ipv6wry.db
       
       - name: Update IPDB
         run: wget https://raw.githubusercontent.com/ipipdotnet/ipdb-go/master/city.free.ipdb -O ipdb/city.free.ipdb
