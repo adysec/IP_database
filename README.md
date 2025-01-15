@@ -55,15 +55,6 @@ https://raw.githubusercontent.com/adysec/IP_database/main/17monipdb/17monipdb.da
 国内下载直链
 https://raw.gitmirror.com/adysec/IP_database/main/17monipdb/17monipdb.dat
 ```
-## ipv6wry
-ipv6wry 数据库文件
-`本地版本在 2022 年 5 月份已停止维护，在线版仍在更新 http://ip.zxinc.org`
-```
-下载直链
-https://raw.githubusercontent.com/adysec/IP_database/main/ipv6wry/ipv6wry.db
-国内下载直链
-https://raw.gitmirror.com/adysec/IP_database/main/ipv6wry/ipv6wry.db
-```
 ## IPDB
 IPDB 数据库文件
 `持续更新`
