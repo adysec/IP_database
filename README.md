@@ -35,7 +35,7 @@ GeoLite 国家数据库文件
 下载直链
 https://raw.githubusercontent.com/adysec/IP_database/main/geolite/GeoLite2-Country.mmdb
 国内下载直链
-https://raw.gitmirror.com/adysec/IP_database/main/geolite/GeoLite2-Country.mmdb`
+https://raw.gitmirror.com/adysec/IP_database/main/geolite/GeoLite2-Country.mmdb
 ```
 ## ip2region.xdb
 IP2Region 数据库文件
