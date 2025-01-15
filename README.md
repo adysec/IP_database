@@ -51,9 +51,9 @@ https://raw.gitmirror.com/adysec/IP_database/main/ip2region/ip2region.xdb
 `官方在 2018 年 6 月份已停止维护`
 ```
 下载直链
-https://raw.githubusercontent.com/adysec/IP_database/main/17monipdb/ip2region.dat
+https://raw.githubusercontent.com/adysec/IP_database/main/17monipdb/17monipdb.dat
 国内下载直链
-https://raw.gitmirror.com/adysec/IP_database/main/17monipdb/ip2region.dat
+https://raw.gitmirror.com/adysec/IP_database/main/17monipdb/17monipdb.dat
 ```
 ## ipv6wry
 ipv6wry 数据库文件
