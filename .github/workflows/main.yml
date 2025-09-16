@@ -53,7 +53,7 @@ jobs:
       
       - name: Update ip2region
         run: |
-          wget https://github.com/lionsoul2014/ip2region/raw/master/data/ip2region.xdb -O ip2region/ip2region.xdb
+          wget https://github.com/lionsoul2014/ip2region/raw/master/data/ip2region_v4.xdb -O ip2region/ip2region.xdb
           wget https://github.com/lionsoul2014/ip2region/raw/master/data/ip.merge.txt -O ip2region/ip.merge.txt
           
       - name: Update 17monipdb
