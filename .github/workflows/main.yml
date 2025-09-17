@@ -48,15 +48,15 @@ jobs:
       - name: Update GeoLite2-ASN
         continue-on-error: true
         run: wget --timeout=30 --tries=3 https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-ASN.mmdb -O geolite/GeoLite2-ASN.mmdb
-        
+
       - name: Update GeoLite2-City
         continue-on-error: true
         run: wget --timeout=30 --tries=3 https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-City.mmdb -O geolite/GeoLite2-City.mmdb
-        
+
       - name: Update GeoLite2-Country
         continue-on-error: true
         run: wget --timeout=30 --tries=3 https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb -O geolite/GeoLite2-Country.mmdb
-      
+
       - name: Update ip2region
         continue-on-error: true
         run: |
@@ -74,11 +74,11 @@ jobs:
       - name: Update DB-IP City
         continue-on-error: true
         run: wget --timeout=30 --tries=3 "https://github.com/sapics/ip-location-db/raw/refs/heads/main/dbip-city-mmdb/dbip-city-ipv4.mmdb" -O db-ip/dbip-city-lite.mmdb
-        
+
       - name: Update DB-IP ASN
         continue-on-error: true
         run: wget --timeout=30 --tries=3 "https://cdn.jsdelivr.net/npm/@ip-location-db/dbip-asn-mmdb/dbip-asn-ipv4.mmdb" -O db-ip/dbip-asn-lite.mmdb
-        
+
       - name: Update DB-IP Country
         continue-on-error: true
         run: wget --timeout=30 --tries=3 "https://cdn.jsdelivr.net/npm/@ip-location-db/dbip-country-mmdb/dbip-country-ipv4.mmdb" -O db-ip/dbip-country-lite.mmdb
