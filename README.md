@@ -3,6 +3,8 @@
 <a href="https://github.com/adysec/IP_database/network/members"><img alt="GitHub forks" src="https://img.shields.io/github/forks/adysec/IP_database?color=orange&style=flat-square"></a>
 <a href="https://github.com/adysec/IP_database/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/adysec/IP_database?color=red&style=flat-square"></a>
 
+下载路径：`https://ip.adysec.com/`
+
 ## 纯真IP数据库
 ### qqwry.dat
 纯真IP数据库文件，dat数据非exe安装包
