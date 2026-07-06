@@ -5,69 +5,153 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IP Database 下载中心</title>
   <style>
-    :root { color-scheme: light dark; }
+    :root {
+      color-scheme: light dark;
+      --bg: #0b1020;
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text: #e6edf3;
+      --muted: #9fb0c3;
+      --link: #58a6ff;
+      --code-bg: rgba(255, 255, 255, 0.08);
+      --btn-border: rgba(88, 166, 255, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       line-height: 1.6;
-      background: #0b1020;
-      color: #e6edf3;
+      background: var(--bg);
+      color: var(--text);
     }
+
     .wrap {
       max-width: 980px;
       margin: 0 auto;
       padding: 40px 20px 56px;
     }
+
     .card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
       border-radius: 16px;
       padding: 24px;
       backdrop-filter: blur(4px);
       margin-bottom: 16px;
+      overflow: hidden;
     }
+
     h1 {
       margin: 0 0 8px;
-      font-size: 32px;
+      font-size: clamp(1.6rem, 3.2vw, 2rem);
       line-height: 1.25;
+      word-break: break-word;
     }
+
     h2 {
       margin: 0 0 10px;
-      font-size: 22px;
+      font-size: clamp(1.2rem, 2.5vw, 1.4rem);
       line-height: 1.3;
+      word-break: break-word;
     }
-    p { margin: 8px 0; }
-    .muted { color: #9fb0c3; }
-    a { color: #58a6ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+
+    p {
+      margin: 8px 0;
+      word-wrap: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     .links {
       margin-top: 14px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
+
     .btn {
-      display: inline-block;
-      border: 1px solid rgba(88, 166, 255, 0.5);
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--btn-border);
       border-radius: 10px;
       padding: 8px 12px;
+      max-width: 100%;
     }
+
     ul {
       margin: 8px 0 0;
       padding-left: 20px;
     }
-    li { margin: 6px 0; }
+
+    li {
+      margin: 8px 0;
+    }
+
     code {
-      background: rgba(255, 255, 255, 0.08);
+      display: inline-block;
+      max-width: 100%;
+      background: var(--code-bg);
       padding: 2px 6px;
       border-radius: 6px;
       word-break: break-all;
+      white-space: pre-wrap;
     }
+
     footer {
       margin-top: 8px;
       font-size: 14px;
-      color: #9fb0c3;
+      color: var(--muted);
       text-align: center;
+      padding: 0 8px;
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        padding: 24px 12px 36px;
+      }
+
+      .card {
+        padding: 16px;
+        border-radius: 12px;
+      }
+
+      .links {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      ul {
+        padding-left: 18px;
+      }
     }
   </style>
 </head>
