@@ -4,9 +4,73 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IP Database</title>
-  <meta http-equiv="refresh" content="0; url=https://ip.adysec.com/" />
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+      background: #0b1020;
+      color: #e6edf3;
+    }
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 56px 20px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 28px;
+      backdrop-filter: blur(4px);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      line-height: 1.25;
+    }
+    p { margin: 10px 0; }
+    .muted { color: #9fb0c3; }
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    .links {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn {
+      display: inline-block;
+      border: 1px solid rgba(88, 166, 255, 0.5);
+      border-radius: 10px;
+      padding: 8px 12px;
+    }
+    footer {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #9fb0c3;
+    }
+  </style>
 </head>
 <body>
-  <p>正在跳转到 <a href="https://ip.adysec.com/">https://ip.adysec.com/</a> ...</p>
+  <main class="wrap">
+    <section class="card">
+      <h1>IP Database</h1>
+      <p class="muted">IP地址库每日更新（GeoLite、纯真、ip2region、17monipdb、IPDB、DB-IP 等）。</p>
+
+      <p>下载地址：<a href="https://ip.adysec.com/" target="_blank" rel="noopener noreferrer">https://ip.adysec.com/</a></p>
+
+      <div class="links">
+        <a class="btn" href="https://ip.adysec.com/" target="_blank" rel="noopener noreferrer">打开下载站</a>
+        <a class="btn" href="https://github.com/adysec/IP_database" target="_blank" rel="noopener noreferrer">GitHub 仓库</a>
+      </div>
+
+      <footer>© AdySec</footer>
+    </section>
+  </main>
 </body>
 </html>
