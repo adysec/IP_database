@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IP Database</title>
+  <title>IP Database 下载中心</title>
   <style>
     :root { color-scheme: light dark; }
     body {
@@ -14,31 +14,34 @@
       color: #e6edf3;
     }
     .wrap {
-      max-width: 860px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 56px 20px;
+      padding: 40px 20px 56px;
     }
     .card {
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 16px;
-      padding: 28px;
+      padding: 24px;
       backdrop-filter: blur(4px);
+      margin-bottom: 16px;
     }
     h1 {
       margin: 0 0 8px;
       font-size: 32px;
       line-height: 1.25;
     }
-    p { margin: 10px 0; }
-    .muted { color: #9fb0c3; }
-    a {
-      color: #58a6ff;
-      text-decoration: none;
+    h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.3;
     }
+    p { margin: 8px 0; }
+    .muted { color: #9fb0c3; }
+    a { color: #58a6ff; text-decoration: none; }
     a:hover { text-decoration: underline; }
     .links {
-      margin-top: 18px;
+      margin-top: 14px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -49,10 +52,22 @@
       border-radius: 10px;
       padding: 8px 12px;
     }
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    code {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 6px;
+      border-radius: 6px;
+      word-break: break-all;
+    }
     footer {
-      margin-top: 16px;
+      margin-top: 8px;
       font-size: 14px;
       color: #9fb0c3;
+      text-align: center;
     }
   </style>
 </head>
@@ -61,16 +76,62 @@
     <section class="card">
       <h1>IP Database</h1>
       <p class="muted">IP地址库每日更新（GeoLite、纯真、ip2region、17monipdb、IPDB、DB-IP 等）。</p>
-
-      <p>下载地址：<a href="https://ip.adysec.com/" target="_blank" rel="noopener noreferrer">https://ip.adysec.com/</a></p>
-
+      <p>统一下载域名：<a href="https://ip.adysec.com/" target="_blank" rel="noopener noreferrer">https://ip.adysec.com/</a></p>
       <div class="links">
         <a class="btn" href="https://ip.adysec.com/" target="_blank" rel="noopener noreferrer">打开下载站</a>
         <a class="btn" href="https://github.com/adysec/IP_database" target="_blank" rel="noopener noreferrer">GitHub 仓库</a>
       </div>
-
-      <footer>© AdySec</footer>
     </section>
+
+    <section class="card">
+      <h2>纯真IP数据库</h2>
+      <p class="muted">qqwry.dat（dat 格式官方在 2024 年 10 月份已停止维护）</p>
+      <ul>
+        <li><a href="https://ip.adysec.com/qqwry/qqwry.dat" target="_blank" rel="noopener noreferrer">qqwry/qqwry.dat</a><br><code>https://ip.adysec.com/qqwry/qqwry.dat</code></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>GeoLite.mmdb</h2>
+      <ul>
+        <li><a href="https://ip.adysec.com/geolite/GeoLite2-ASN.mmdb" target="_blank" rel="noopener noreferrer">geolite/GeoLite2-ASN.mmdb</a><br><code>https://ip.adysec.com/geolite/GeoLite2-ASN.mmdb</code></li>
+        <li><a href="https://ip.adysec.com/geolite/GeoLite2-City.mmdb" target="_blank" rel="noopener noreferrer">geolite/GeoLite2-City.mmdb</a><br><code>https://ip.adysec.com/geolite/GeoLite2-City.mmdb</code></li>
+        <li><a href="https://ip.adysec.com/geolite/GeoLite2-Country.mmdb" target="_blank" rel="noopener noreferrer">geolite/GeoLite2-Country.mmdb</a><br><code>https://ip.adysec.com/geolite/GeoLite2-Country.mmdb</code></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>ip2region.xdb</h2>
+      <ul>
+        <li><a href="https://ip.adysec.com/ip2region/ip2region.xdb" target="_blank" rel="noopener noreferrer">ip2region/ip2region.xdb</a><br><code>https://ip.adysec.com/ip2region/ip2region.xdb</code></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>17monipdb</h2>
+      <p class="muted">官方在 2018 年 6 月份已停止维护</p>
+      <ul>
+        <li><a href="https://ip.adysec.com/17monipdb/17monipdb.dat" target="_blank" rel="noopener noreferrer">17monipdb/17monipdb.dat</a><br><code>https://ip.adysec.com/17monipdb/17monipdb.dat</code></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>IPDB</h2>
+      <ul>
+        <li><a href="https://ip.adysec.com/ipdb/city.free.ipdb" target="_blank" rel="noopener noreferrer">ipdb/city.free.ipdb</a><br><code>https://ip.adysec.com/ipdb/city.free.ipdb</code></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>DB-IP</h2>
+      <ul>
+        <li><a href="https://ip.adysec.com/db-ip/dbip-city-lite.mmdb" target="_blank" rel="noopener noreferrer">db-ip/dbip-city-lite.mmdb</a><br><code>https://ip.adysec.com/db-ip/dbip-city-lite.mmdb</code></li>
+        <li><a href="https://ip.adysec.com/db-ip/dbip-asn-lite.mmdb" target="_blank" rel="noopener noreferrer">db-ip/dbip-asn-lite.mmdb</a><br><code>https://ip.adysec.com/db-ip/dbip-asn-lite.mmdb</code></li>
+        <li><a href="https://ip.adysec.com/db-ip/dbip-country-lite.mmdb" target="_blank" rel="noopener noreferrer">db-ip/dbip-country-lite.mmdb</a><br><code>https://ip.adysec.com/db-ip/dbip-country-lite.mmdb</code></li>
+      </ul>
+    </section>
+
+    <footer>© AdySec · GitHub Pages</footer>
   </main>
 </body>
 </html>
